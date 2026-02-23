@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Data Science Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(-45deg, #f3e8ff, #fdf6ec, #ffffff, #ede9fe);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #6b46c1;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9333ea;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #6b46c1;
+}
+
+h2 {
+    font-size: 30px;
+    color: #7c3aed;
+}
+
+/* HOME */
+.home-content {
+    text-align: center;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #c4b5fd;
+    color: #333;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a78bfa;
+}
+
+/* CARD DESIGN */
+.card {
+    background: rgba(255,255,255,0.8);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f5f3ff;
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* CONTACT */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #c4b5fd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    h1 {font-size: 28px;}
+    h2 {font-size: 22px;}
+    section {padding: 100px 5%;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="fade-in">
+    <div class="home-content">
+        <h1>Hi, I'm Sandhiya J</h1>
+        <p>Third-Year Artificial Intelligence & Data Science Student</p>
+        <p>Passionate about building intelligent systems, data-driven solutions, and impactful AI applications.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a dedicated AI & Data Science student with strong foundations in Machine Learning,
+            Data Mining, and Full-Stack Web Development. I enjoy transforming data into meaningful insights
+            and building intelligent systems that solve real-world problems.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill">Python</div>
+        <div class="skill">Machine Learning</div>
+        <div class="skill">Data Mining</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Web Development</div>
+        <div class="skill">Pandas & NumPy</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+        <div class="card">
+            <h3>AI-Based Student Performance Predictor</h3>
+            <p>Built a machine learning model using Python and Scikit-learn to predict student performance based on behavioral and academic data.</p>
+        </div>
+
+        <div class="card">
+            <h3>Customer Segmentation using Data Mining</h3>
+            <p>Applied K-Means clustering to segment customers based on purchasing behavior for targeted marketing strategies.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sentiment Analysis Web App</h3>
+            <p>Developed a web-based sentiment analysis tool using NLP techniques to classify user reviews into positive, negative, or neutral.</p>
+        </div>
+
+        <div class="card">
+            <h3>SQL-Based Sales Dashboard</h3>
+            <p>Designed interactive dashboards using SQL and Power BI to analyze sales performance and business KPIs.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="fade-in">
+    <h2>Certifications</h2>
+    <div class="card">
+        <ul>
+            <li>Machine Learning Certification</li>
+            <li>Python for Data Science</li>
+            <li>SQL & Database Management</li>
+            <li>Data Visualization with Power BI</li>
+            <li>Uipath automation</li>
+            <li>MongoDB</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <div class="card contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </div>
+</section>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting){
+            return;
+        } else {
+            entry.target.classList.add('active');
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
