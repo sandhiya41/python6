@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card p-4 border-0 shadow-sm mb-4">
+            <h3 class="fw-bold mb-4">Add New Product</h3>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.name.label(class="form-label") }}
+                    {{ form.name(class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.category.label(class="form-label") }}
+                    {{ form.category(class="form-control", placeholder="e.g. Electronics, Fashion") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.price.label(class="form-label") }}
+                    {{ form.price(class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.image.label(class="form-label") }}
+                    {{ form.image(class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.description.label(class="form-label") }}
+                    {{ form.description(class="form-control", rows="3") }}
+                </div>
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card p-4 border-0 shadow-sm">
+            <h3 class="fw-bold mb-4">Manage Inventory</h3>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>
+                                <div class="fw-bold">{{ product.name }}</div>
+                            </td>
+                            <td><span class="badge bg-info text-dark">{{ product.category }}</span></td>
+                            <td>${{ "%.2f"|format(product.price) }}</td>
+                            <td>
+                                <form action="{{ url_for('delete_product', product_id=product.id) }}" method="POST">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

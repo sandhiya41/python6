@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="text-center mb-4 fw-bold">Login</h2>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.email.label(class="form-label") }}
+                    {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.email(class="form-control", placeholder="Enter your email") }}
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    {{ form.password.label(class="form-label") }}
+                    {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.password(class="form-control", placeholder="Enter your password") }}
+                    {% endif %}
+                </div>
+                <div class="form-check mb-3">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+            <div class="text-center mt-3">
+                <small class="text-muted">
+                    Don't have an account? <a href="{{ url_for('register') }}" class="text-primary">Sign Up</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
