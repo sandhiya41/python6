@@ -1,0 +1,39 @@
+import random
+
+choices = ["rock", "paper", "scissors"]
+
+def winner(user, computer):
+    if user == computer:
+        return "It's a tie!"
+    elif (user == "rock" and computer == "scissors") or \
+         (user == "paper" and computer == "rock") or \
+         (user == "scissors" and computer == "paper"):
+        return "You win!"
+    else:
+        return "Computer wins!"
+
+def play():
+    user = input("Enter rock, paper, or scissors (or 'quit' to exit): ").lower()
+
+    # Base case (stop recursion)
+    if user == "quit":
+        print("Game Over!")
+        return
+
+    if user not in choices:
+        print("Invalid choice! Try again.\n")
+        play()   # Recursive call for invalid input
+        return
+
+    computer = random.choice(choices)
+
+    print(f"\nYou chose: {user}")
+    print(f"Computer chose: {computer}")
+    print(winner(user, computer))
+    print()
+
+    play()   # Recursive call to continue the game
+
+# Start the game
+play()
+
